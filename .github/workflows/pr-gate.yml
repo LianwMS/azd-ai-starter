@@ -52,6 +52,11 @@ jobs:
             echo "No hooks directory or no .sh files found in hooks directory"
           fi
 
+      - name: Analyze Azure template files
+        uses: microsoft/ps-rule@v2.9.0
+        with:
+          modules: 'PSRule.Rules.Azure'
+
       - name: Run Microsoft Security DevOps Analysis
         uses: microsoft/security-devops-action@v1
         id: msdo
