@@ -7,6 +7,10 @@ param environmentName string
 
 @minLength(1)
 @description('Primary location for all resources')
+@metadata({azd: { 
+  type: 'location'
+  default: 'southcentralus'
+}})
 param location string
 
 @description('The Azure resource group where new resources will be deployed')
